@@ -19,6 +19,9 @@
         <module>account</module>
         <module>discovery</module>
         <module>health-service</module>
+        <module>gateway</module>
+        <module>config</module>
+        <module>auth</module>
     </modules>
 
 </project>
