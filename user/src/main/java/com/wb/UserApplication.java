@@ -11,8 +11,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EnableEurekaClient
 @EntityScan(basePackages = "com.wb")
-public class AccountApplication {
+public class UserApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(AccountApplication.class, args);
+		SpringApplication.run(UserApplication.class, args);
 	}
 }

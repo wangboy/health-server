@@ -3,6 +3,20 @@ server:
 spring:
   application:
     name: account    # 项目名称尽量用小写
+  datasource:
+    url: jdbc:mysql://localhost:3306/health?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    database: mysql
+
 logging:
   level:
     root: INFO
@@ -17,20 +31,3 @@ eureka:
       defaultZone: http://discovery:8761/eureka/    # 指定注册中心的地址
   instance:
     preferIpAddress: true
-
----
-spring:
-  profiles: mysql
-  datasource:
-    url: jdbc:mysql://localhost:3306/health?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&createDatabaseIfNotExist=true
-    username: root
-    password: root
-    driver-class-name: com.mysql.jdbc.Driver
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-    database: mysql
