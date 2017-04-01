@@ -3,3 +3,16 @@ discovery:
   image: wb/discovery
   ports:
    - "8761:8761"
+gateway:
+  image: wb/gateway
+  ports:
+   - "10000:10000"
+  links:
+   - discovery
+   - user
+user:
+  image: wb/user
+   ports:
+     - "9000:9000"
+  links:
+   - discovery

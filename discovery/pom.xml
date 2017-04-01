@@ -13,9 +13,9 @@
     <version>0.1.0</version>
     <packaging>jar</packaging>
 
-    <properties>
-        <docker.image.prefix>wb</docker.image.prefix>
-    </properties>
+    <!--<properties>-->
+        <!--<docker.image.prefix>wb</docker.image.prefix>-->
+    <!--</properties>-->
 
     <dependencies>
         <dependency>
