@@ -22,7 +22,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>account</module>
+        <module>user</module>
         <module>discovery</module>
         <module>health-service</module>
         <module>gateway</module>
