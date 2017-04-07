@@ -40,3 +40,11 @@ eureka:
 #    fetchRegistry: true
 #    serviceUrl:
 #      defaultZone: http://discovery:8761/eureka/
+security:
+  oauth2:
+    client:
+      clientId: user
+      clientSecret: user_secret
+      accessTokenUri: http://auth:5000/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server

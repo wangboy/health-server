@@ -3,6 +3,7 @@ package com.wb.controller;
 import com.wb.domain.User;
 import com.wb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ public class UserController {
 	UserService userService;
 	
 	
-	//	@PreAuthorize("#oauth2.hasScope('server') or #name.equals('demo')")
+	@PreAuthorize("#oauth2.hasScope('server') or #name.equals('demo')")
 	@RequestMapping(path = "/{name}", method = RequestMethod.GET)
 	public User getUserByName(@PathVariable String name) {
 		return userService.findByName(name);

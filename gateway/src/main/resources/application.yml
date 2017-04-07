@@ -22,6 +22,11 @@ zuul:
         serviceId: user
 #        stripPrefix: false
 #        sensitiveHeaders:
+    auth:
+        path: /uaa/**
+        url: http://auth:5000
+        stripPrefix: false
+        sensitiveHeaders:
 
 eureka:
   instance:
