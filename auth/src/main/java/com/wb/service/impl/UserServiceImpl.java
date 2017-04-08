@@ -27,10 +27,10 @@ public class UserServiceImpl implements UserService {
 	public void createUser(User user) {
 		
 		User existing = userRepository.findOne(user.getUsername());
-		Assert.isNull(existing, "user already exists: " + user.getUsername());
+		Assert.isNull(existing, "user already exists: " + user.getUsername() + "_" + user.getPassword());
 		
-//		String hash = encoder.encode(user.getPassword());
-//		user.setPassword(hash);
+		String hash = encoder.encode(user.getPassword());
+		user.setPassword(hash);
 		
 		userRepository.save(user);
 		
