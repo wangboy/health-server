@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @FeignClient(name = "auth")
 public interface AuthClient {
+	
 	@RequestMapping(method = RequestMethod.POST, value = "/uaa/users", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	void createUser(User user);
 }

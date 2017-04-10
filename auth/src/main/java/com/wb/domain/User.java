@@ -1,11 +1,13 @@
 package com.wb.domain;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 
 /**
@@ -14,12 +16,20 @@ import java.util.Collection;
 @Entity
 @Table(name = "au_user")
 public class User implements UserDetails {
-	
 	@Id
-	private String username;
+	@NotNull
+	@Length(min = 3, max = 20)
+	private String cell;
 	
+	@NotNull
+	@Length(min = 3, max = 20)
+	private String name;
+	
+	@NotNull
+	@Length(min = 6, max = 40)
 	private String password;
 	
+	private Role role;
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -38,11 +48,31 @@ public class User implements UserDetails {
 	
 	@Override
 	public String getUsername() {
-		return username;
+		return cell;
 	}
 	
-	public void setUsername(String username) {
-		this.username = username;
+	public String getCell() {
+		return cell;
+	}
+	
+	public void setCell(String cell) {
+		this.cell = cell;
+	}
+	
+	public Role getRole() {
+		return role;
+	}
+	
+	public void setRole(Role role) {
+		this.role = role;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	@Override

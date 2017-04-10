@@ -1,11 +1,11 @@
 package com.wb.domain;
 
-import javax.persistence.Column;
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by wangbo on 2017/4/1.
@@ -13,38 +13,32 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "user")
 public class User {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@Column(name = "user_name")
-	private String name;
-	
-	private String password;
-	
+	@NotNull
+	@Length(min = 3, max = 20)
 	private String cell;
 	
-	@Column()
-	private String wristband;
+	@NotNull
+	@Length(min = 3, max = 20)
+	private String name;
 	
-	public Long getId() {
-		return id;
-	}
+	@NotNull
+	@Length(min = 6, max = 40)
+	private String password;
 	
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
+	private Role role;
 	
 	public String getPassword() {
 		return password;
+	}
+	
+	public Role getRole() {
+		return role;
+	}
+	
+	public void setRole(Role role) {
+		this.role = role;
 	}
 	
 	public void setPassword(String password) {
@@ -59,11 +53,11 @@ public class User {
 		this.cell = cell;
 	}
 	
-	public String getWristband() {
-		return wristband;
+	public String getName() {
+		return name;
 	}
 	
-	public void setWristband(String wristband) {
-		this.wristband = wristband;
+	public void setName(String name) {
+		this.name = name;
 	}
 }

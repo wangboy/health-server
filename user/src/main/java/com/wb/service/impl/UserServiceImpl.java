@@ -1,5 +1,6 @@
 package com.wb.service.impl;
 
+import com.wb.client.AuthClient;
 import com.wb.domain.User;
 import com.wb.repository.UserRepository;
 import com.wb.service.UserService;
@@ -26,6 +27,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	AuthClient authClient;
 	
 	@PostConstruct
 	public void init() {

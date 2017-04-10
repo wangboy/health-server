@@ -1,5 +1,6 @@
 package com.wb.controller;
 
+import com.wb.client.AuthClient;
 import com.wb.domain.User;
 import com.wb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,6 @@ public class UserController {
 	
 	@Autowired
 	UserService userService;
-	
 	
 	@PreAuthorize("#oauth2.hasScope('server') or #name.equals('demo')")
 	@RequestMapping(path = "/{name}", method = RequestMethod.GET)
