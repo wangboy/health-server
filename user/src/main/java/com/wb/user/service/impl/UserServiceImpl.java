@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
 			User user = new User();
 			user.setCell("1352209" + i + i + i + i);
 			user.setName(name);
-			user.setPassword("pass" + i);
+			user.setPassword("passsss" + i);
 			user.setRole(Role.USER);
 			userRepository.save(user);
 			

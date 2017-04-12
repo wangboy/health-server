@@ -1,4 +1,5 @@
 server:
+  context-path: /user
   port: 9000
 spring:
   application:
@@ -23,7 +24,7 @@ logging:
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-#    com.wb.youran.persistence: ERROR
+    org.springframework.security: INFO
 
 eureka:
   client:
@@ -31,15 +32,15 @@ eureka:
       defaultZone: http://discovery:8761/eureka/    # 指定注册中心的地址
   instance:
     preferIpAddress: true
-#
-#eureka:
-#  instance:
-#    hostname: gateway
-#  client:
-#    registerWithEureka: true
-#    fetchRegistry: true
-#    serviceUrl:
-#      defaultZone: http://discovery:8761/eureka/
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+
 security:
   oauth2:
     client:
@@ -48,3 +49,6 @@ security:
       accessTokenUri: http://auth:5000/uaa/oauth/token
       grant-type: client_credentials
       scope: server
+    resource:
+      user-info-uri: http://auth:5000/uaa/users/current
+
