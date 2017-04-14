@@ -20,8 +20,8 @@ zuul:
     user:
         path: /user/**
         serviceId: user
-#        stripPrefix: false
-#        sensitiveHeaders:
+        stripPrefix: false
+        sensitiveHeaders:
     auth:
         path: /uaa/**
         url: http://auth:5000
