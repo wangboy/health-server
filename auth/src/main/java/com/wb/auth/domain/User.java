@@ -26,7 +26,7 @@ public class User implements UserDetails {
 	private String name;
 	
 	@NotNull
-	@Length(min = 6, max = 40)
+	@Length(min = 6, max = 80)
 	private String password;
 	
 	private Role role;

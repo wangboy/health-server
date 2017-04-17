@@ -99,6 +99,8 @@ public class AuthApplication {
 					.secret("user_secret")
 					.authorizedGrantTypes("client_credentials", "refresh_token")
 					.scopes("server");
+			
+			
 			// @formatter:on
 		}
 		
