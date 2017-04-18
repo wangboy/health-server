@@ -51,4 +51,5 @@ security:
       scope: server
     resource:
       user-info-uri: http://auth:5000/uaa/users/current
+      filter-order: 3
 
