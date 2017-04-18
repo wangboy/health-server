@@ -20,11 +20,11 @@ spring:
 
 logging:
   level:
-    root: DEBUG
-#    org.hibernate: INFO
-#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-#    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-#    org.springframework.security: INFO
+#    root: DEBUG
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    org.springframework.security: INFO
 
 eureka:
   client:
