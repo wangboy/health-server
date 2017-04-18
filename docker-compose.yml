@@ -10,9 +10,17 @@ gateway:
   links:
    - discovery
    - user
+   - auth
 user:
   image: wb/user
    ports:
      - "9000:9000"
   links:
    - discovery
+auth:
+  image: wb/auth
+   ports:
+     - "5000:5000"
+  links:
+   - discovery
+

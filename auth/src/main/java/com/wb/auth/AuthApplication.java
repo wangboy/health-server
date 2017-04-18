@@ -40,6 +40,9 @@ public class AuthApplication {
 		SpringApplication.run(AuthApplication.class, args);
 	}
 	
+	/**
+	 * https://github.com/spring-projects/spring-boot/issues/8286
+	 */
 	@Configuration
 	@EnableWebSecurity
 	@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
